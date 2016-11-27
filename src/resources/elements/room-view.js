@@ -65,11 +65,11 @@ export class RoomView {
                 video.oncontextmenu = function () { return false; };
                 video.className = "embed-responsive-item";
 
-                var $container = $(`<div class=".col-md-6"><div class="panel panel-default" id="${this.rtc.getDomId(peer)}">
+                var $container = $(`<div class="col-md-6"><div class="panel panel-default" id="${this.rtc.getDomId(peer)}">
             <div class="panel-body"><div class="embed-responsive embed-responsive-16by9">
                 
             </div></div>
-            <div class="panel-footer">Panel footer</div>
+            <div class="panel-footer"></div>
         </div></div>`);
                 $container.find('.embed-responsive').append(video);
 
