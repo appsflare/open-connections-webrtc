@@ -1,0 +1,30 @@
+<template bindable="rooms">
+    <require from="./room-card"></require>
+    <div class="row">
+        <div class=" thumbnail col-md-12">
+            <form class="form-inline" submit.delegate="createNewRoom()">
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input id="inputRoomName" type="text" class="form-control" placeholder="Room Name" name="name" value.two-way="room.name"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <textarea id="textDescription" class="form-control" placeholder="What is this room for?" value.two-way="room.description"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a href="#" class="btn btn-default" role="button" click.delegate="resetCreateNewRoom()">Reset</a>
+
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="alert alert-warning" if.bind="!rooms.length" role="alert">You are lonely out in this realm. Create a room to get some company!!</div>
+        <div class="col-sm-6 col-md-4" repeat.for="room of rooms">
+            <room-card room.bind="room"> </room-card>
+        </div>
+    </div>
+</template>

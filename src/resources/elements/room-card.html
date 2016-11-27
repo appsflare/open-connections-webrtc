@@ -1,0 +1,12 @@
+<template>
+    <div class="thumbnail">
+        <div class="caption">
+            <h3>${room.name}</h3>
+            <p>${room.description}</p>
+            <p>
+                <input type="button" class="btn btn-primary" role="button" click.delegate="connect()" value="Connect"/>
+                <input type="button" class="btn btn-default" role="button" click.delegate="delete()" value="Delete"/>
+            </p>
+        </div>
+    </div>
+</template>
