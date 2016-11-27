@@ -676,7 +676,7 @@ define('resources/elements/room-view',['exports', 'aurelia-router', '../messages
                     };
                     video.className = "embed-responsive-item";
 
-                    var $container = $('<div class="col-md-6"><div class="panel panel-default" id="' + _this.rtc.getDomId(peer) + '">\n            <div class="panel-body"><div class="embed-responsive embed-responsive-16by9">\n                \n            </div></div>\n            <div class="panel-footer"></div>\n        </div></div>');
+                    var $container = $('<div class="col-md-6" id="' + _this.rtc.getDomId(peer) + '"><div class="panel panel-default">\n            <div class="panel-body"><div class="embed-responsive embed-responsive-16by9">\n                \n            </div></div>\n            <div class="panel-footer"></div>\n        </div></div>');
                     $container.find('.embed-responsive').append(video);
 
                     $container.appendTo(remotes);
@@ -685,7 +685,7 @@ define('resources/elements/room-view',['exports', 'aurelia-router', '../messages
 
             this.rtc.on('videoRemoved', function (video, peer) {
                 console.log('video removed ', peer);
-                $('#' + _this.rtc.getDomId(peer)).parent().remove();
+                $('#' + _this.rtc.getDomId(peer)).remove();
             });
         };
 

@@ -65,7 +65,7 @@ export class RoomView {
                 video.oncontextmenu = function () { return false; };
                 video.className = "embed-responsive-item";
 
-                var $container = $(`<div class="col-md-6"><div class="panel panel-default" id="${this.rtc.getDomId(peer)}">
+                var $container = $(`<div class="col-md-6" id="${this.rtc.getDomId(peer)}"><div class="panel panel-default">
             <div class="panel-body"><div class="embed-responsive embed-responsive-16by9">
                 
             </div></div>
@@ -82,7 +82,7 @@ export class RoomView {
         // a peer video was removed
         this.rtc.on('videoRemoved', (video, peer) => {
             console.log('video removed ', peer);
-            $(`#${this.rtc.getDomId(peer)}`).parent().remove();
+            $(`#${this.rtc.getDomId(peer)}`).remove();
         });
     }
 
