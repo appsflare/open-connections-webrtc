@@ -675,7 +675,7 @@ define('resources/elements/room-view',['exports', 'aurelia-router', '../messages
                         return false;
                     };
                     video.className = "embed-responsive-item";
-
+                    video.controls = true;
                     var $container = $('<div class="col-md-6" id="' + _this.rtc.getDomId(peer) + '"><div class="panel panel-default">\n            <div class="panel-body"><div class="embed-responsive embed-responsive-16by9">\n                \n            </div></div>\n            <div class="panel-footer"></div>\n        </div></div>');
                     $container.find('.embed-responsive').append(video);
 

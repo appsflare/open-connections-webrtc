@@ -64,7 +64,7 @@ export class RoomView {
                 // suppress contextmenu
                 video.oncontextmenu = function () { return false; };
                 video.className = "embed-responsive-item";
-
+                video.controls = true;
                 var $container = $(`<div class="col-md-6" id="${this.rtc.getDomId(peer)}"><div class="panel panel-default">
             <div class="panel-body"><div class="embed-responsive embed-responsive-16by9">
                 
