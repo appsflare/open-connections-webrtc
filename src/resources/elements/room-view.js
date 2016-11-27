@@ -82,11 +82,7 @@ export class RoomView {
         // a peer video was removed
         this.rtc.on('videoRemoved', (video, peer) => {
             console.log('video removed ', peer);
-            var remotes = document.getElementById('remotes');
-            var el = document.getElementById(peer ? 'container_' + this.rtc.getDomId(peer) : 'localScreenContainer');
-            if (remotes && el) {
-                remotes.removeChild(el);
-            }
+            $(`#${this.rtc.getDomId(peer)}`).parent().remove();
         });
     }
 

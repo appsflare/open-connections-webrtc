@@ -685,11 +685,7 @@ define('resources/elements/room-view',['exports', 'aurelia-router', '../messages
 
             this.rtc.on('videoRemoved', function (video, peer) {
                 console.log('video removed ', peer);
-                var remotes = document.getElementById('remotes');
-                var el = document.getElementById(peer ? 'container_' + _this.rtc.getDomId(peer) : 'localScreenContainer');
-                if (remotes && el) {
-                    remotes.removeChild(el);
-                }
+                $('#' + _this.rtc.getDomId(peer)).parent().remove();
             });
         };
 
